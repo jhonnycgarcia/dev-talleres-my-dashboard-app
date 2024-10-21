@@ -12,6 +12,8 @@ export default class ControlFlowPageComponent {
 
   public showContent = signal(false);
   public grade = signal<Grade>('A');
+  public frameworks = signal<string[]>(['Angular', 'React', 'Vue', 'Svelte']);
+  public frameworks2 = signal<string[]>([]);
 
 
   public toggleContent() {

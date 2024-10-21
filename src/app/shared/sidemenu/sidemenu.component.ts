@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'shared-sidemenu',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class SidemenuComponent {
+
+  public menuItems = routes.map((route) => route.children ?? [])
+    .flat()
+    .filter((route) => route && route.path)
+    .filter((route) => !route.path?.includes(':'));
 
 }

@@ -44,4 +44,12 @@ export default class InputOutputComponent {
     takeUntilDestroyed(this.destroyRef$)
   ).subscribe();
 
+  public updateProduct(product: Product, quantity: number) {
+    this.products.update((products) =>
+      products.map((p) =>
+        p.id === product.id ? { ...product, quantity } : p
+      )
+    );
+  }
+
 }

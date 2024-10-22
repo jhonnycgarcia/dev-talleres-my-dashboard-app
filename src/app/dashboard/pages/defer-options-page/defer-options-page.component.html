@@ -15,3 +15,84 @@
   }
 
 </section>
+
+<section>
+  <hr class="my-2">
+
+  <button
+    #btnInteraction
+    class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+    Click me!
+  </button>
+
+  @defer (on interaction(btnInteraction)) {
+    <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On iteracion</span>
+    </shared-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-20 bg-gray-200 animate-pulse">
+      Placeholder div
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer (on hover(btnInteraction)) {
+    <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On iteracion</span>
+    </shared-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-20 bg-gray-200 animate-pulse">
+      Placeholder div hover
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer (on immediate) {
+    <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On immediate</span>
+    </shared-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-20 bg-gray-200 animate-pulse">
+      Placeholder div immediate
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer (on timer(2000)) {
+    <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Timer</span>
+    </shared-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-20 bg-gray-200 animate-pulse">
+      Placeholder div timer
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer (on hover; prefetch on idle) {
+    <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On hover, idle</span>
+    </shared-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-20 bg-gray-200 animate-pulse">
+      Placeholder div hover idle
+    </div>
+  }
+
+</section>
